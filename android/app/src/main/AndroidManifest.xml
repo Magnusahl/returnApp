@@ -29,7 +29,7 @@
 
        <meta-data
      android:name="com.google.android.maps.v2.API_KEY"
-     android:value="AIzaSyBE_RV0-2kspzvO-3ZY5odHpLtak7K0Ngc"/>
+     android:value=""/>
 
    <!-- You will also only need to add this uses-library tag -->
    <uses-library android:name="org.apache.http.legacy" android:required="false"/>

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Dimensions, Image, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Dimensions, Text, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import RecycleStations from '../context/RecycleStations'
@@ -25,13 +25,6 @@ export default function Map({ navigation }) {
                     coordinate={{ latitude: 59.239056, longitude: 17.970975 }}
                     image={{ uri: 'ic_recycle' }}
                 >
-                    {/* <Image
-                        source={require('../../assets/icons/recycling.png')}
-                        style={{
-                            width: 40,
-                            height: 38,
-                        }}
-                    /> */}
                     <Callout
                         onPress={() => navigation.navigate('RecycleStation')}
                         style={{

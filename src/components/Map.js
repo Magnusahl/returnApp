@@ -2,9 +2,13 @@ import React from "react";
 import { StyleSheet, View, Dimensions, Text, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
-import RecycleStations from '../context/RecycleStations'
+import firestore from '@react-native-firebase/firestore';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { fetchRecyclestations } from '../redux/actions/index'
 
 const screenWidth = Dimensions.get('window').width
+const recycleStationsCollection = firestore().collection('recyclestations');
 
 export default function Map({ navigation }) {
 
@@ -66,10 +70,9 @@ export default function Map({ navigation }) {
 
 }
 
+const mapDispatchProps = (dispatch) => bindActionCreators({ fetchRecyclestations }, dispatch)
 
-
-
-
+export default connect(mapDispatchProps)
 
 const styles = StyleSheet.create({
     container: {
